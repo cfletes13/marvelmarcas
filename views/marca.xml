@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="marca_form_view">
+        <field name="name">marca.form</field>
+        <field name="model">marvelmarcas.marca</field>
+        <field name="arch" type="xml">
+         <form string="Marca Form">
+           <sheet>
+             <group>
+               <field name="name"/>
+             </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="marca_tree_view">
+        <field name="name">marca.tree</field>
+        <field name="model">marvelmarcas.marca</field>
+        <field name="arch" type="xml">
+         <tree string="Marca Tree">
+               <field name="name"/>
+           </tree>
+       </field>
+   </record>
+
+    <record model="ir.actions.act_window" id="marca_list_action">
+        <field name="name">Marcas</field>
+        <field name="res_model">marvelmarcas.marca</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context" eval="{'search_default_marcas': 1}"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">Favor de crear la primera marca no seas ......
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="marca_menu" name="Marca" parent="stock.menu_stock_inventory_control" action="marca_list_action" sequence="5"/>
+
+</odoo>

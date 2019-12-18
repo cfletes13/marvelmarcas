@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="refaoriginal_form_view">
+        <field name="name">refaoriginal.form</field>
+        <field name="model">marvelmarcas.refaoriginal</field>
+        <field name="arch" type="xml">
+         <form string="Refaccion Original Form">
+           <sheet>
+             <group>
+               <field name="name"/>
+             </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="refaoriginal_tree_view">
+        <field name="name">refaoriginal.tree</field>
+        <field name="model">marvelmarcas.refaoriginal</field>
+        <field name="arch" type="xml">
+         <tree string="Refaccion Origilan Tree">
+               <field name="name"/>
+           </tree>
+       </field>
+   </record>
+
+    <record model="ir.actions.act_window" id="refaoriginal_list_action">
+        <field name="name">Refaccion Original</field>
+        <field name="res_model">marvelmarcas.refaoriginal</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context" eval="{'search_default_refaccion_original': 1}"/>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">Favor de crear la primera refaccion origial no seas ......
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="refaoriginal_menu" name="Refaccion Original" parent="stock.menu_stock_inventory_control" action="refaoriginal_list_action" sequence="6"/>
+
+</odoo>
