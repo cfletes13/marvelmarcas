@@ -8,7 +8,7 @@ class MarcasStock(models.Model):
     marca_ids = fields.Many2many(
         'marvelmarcas.marca', 'marvelmarcas_marca_rel',
         'marcasrc_id', 'marcadest_id',
-        string='Marca')
+        string='Marcas Compatibles')
 
 
 class RefaccionOriginalStock(models.Model):
